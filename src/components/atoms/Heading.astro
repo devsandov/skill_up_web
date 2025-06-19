@@ -1,0 +1,8 @@
+---
+const { level = 1, children } = Astro.props;
+const Tag = `h${level}`;
+---
+
+<@Tag class={`opacity-0 animate-fadeIn delay-${level * 100} text-${level === 1 ? '4xl' : '2xl'} font-bold`}>
+  {children}
+</@Tag>

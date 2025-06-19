@@ -1,0 +1,9 @@
+
+---
+const { aspect = '16/9' } = Astro.props;
+const [w,h] = aspect.split('/').map(Number);
+---
+<div
+  class="w-full bg-gray-200 rounded-lg overflow-hidden opacity-0 animate-fadeIn delay-400"
+  style={`padding-top:${100*(h/w)}%`}
+></div>

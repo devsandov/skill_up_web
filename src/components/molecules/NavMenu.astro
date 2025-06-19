@@ -1,0 +1,19 @@
+
+---
+import NavLink from '@atoms/NavLink.astro';
+const { items } = Astro.props; // [{ href, label }]
+---
+<nav>
+  <button id="btn" class="md:hidden p-2">☰</button>
+  <ul id="menu" class="hidden flex-col space-y-4 mt-4 md:flex md:flex-row md:space-x-6">
+    {items.map(i => <li><NavLink href={i.href}>{i.label}</NavLink></li>)}
+  </ul>
+  <script>
+    const btn = document.getElementById('btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      console.log('Menu toggled');
+    });
+  </script>
+</nav>

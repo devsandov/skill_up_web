@@ -1,0 +1,14 @@
+
+---
+import Heading from '@atoms/Heading.astro';
+import Text from '@atoms/Text.astro';
+import ButtonGroup from '@molecules/ButtonGroup.astro';
+---
+<div class="space-y-6 text-center md:text-left">
+  <Heading level={1}>Transformamos el potencial de la juventud guatemalteca</Heading>
+  <Text>Plataforma sin fines de lucro que combina mentoría, contenidos interactivos y chatbot WhatsApp.</Text>
+  <ButtonGroup actions={[
+    { label: 'Solicitar piloto gratuito', href: '#pilot', variant: 'primary' },
+    { label: 'Conocer más', href: '#more', variant: 'outline' }
+  ]}/>
+</div>

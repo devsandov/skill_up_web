@@ -1,0 +1,17 @@
+
+---
+import Logo from '@atoms/Logo.astro';
+import NavMenu from '@molecules/NavMenu.astro';
+---
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur z-50 opacity-0 animate-fadeIn">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <Logo/>
+    <NavMenu items={[
+      { href: '#inicio', label: 'Inicio' },
+      { href: '#problema', label: 'El problema' },
+      { href: '#solucion', label: 'Nuestra solución' },
+      { href: '#impacto', label: 'Impacto' },
+      { href: '#unete', label: 'Únete' }
+    ]}/>
+  </div>
+</header>

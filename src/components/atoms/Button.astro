@@ -1,0 +1,11 @@
+
+---
+const { variant = 'primary', children } = Astro.props;
+const base = 'px-4 py-2 rounded-lg font-medium transition transform duration-200';
+const style = variant === 'outline'
+  ? 'border border-teal-500 text-teal-500 hover:bg-teal-50 hover:scale-105'
+  : 'bg-teal-500 text-white hover:bg-teal-600 hover:scale-105';
+---
+<button class={`${base} ${style} opacity-0 animate-fadeIn delay-300`}>
+  {children}
+</button>
