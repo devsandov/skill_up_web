@@ -1,0 +1,53 @@
+---
+import Heading      from '@atoms/Heading.astro';
+import Text         from '@atoms/Text.astro';
+import BenefitCard  from '@molecules/BenefitCard.astro';
+---
+<section id="beneficios" class="py-20 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <Heading level={2}>Beneficios para todos</Heading>
+    <Text>Una solución que impacta positivamente a toda la comunidad educativa</Text>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <BenefitCard
+      icon=""
+      title="Docentes"
+      benefits={[
+        'Reduce carga de tutorías',
+        'Dashboard de progreso',
+        'Herramientas para talleres',
+      ]}
+      variant="blue"
+    />
+    <BenefitCard
+      icon=""
+      title="Estudiantes-aprendices"
+      benefits={[
+        'Mejora de notas',
+        'Confianza para preguntar',
+        'Acceso gratuito vía WhatsApp',
+      ]}
+      variant="green"
+    />
+    <BenefitCard
+      icon=""
+      title="Estudiantes-mentores"
+      benefits={[
+        'Desarrollo de liderazgo',
+        'Certificados y becas',
+        'Oportunidades de pasantías',
+      ]}
+      variant="purple"
+    />
+    <BenefitCard
+      icon=""
+      title="Inversionistas sociales"
+      benefits={[
+        'Impacto medible',
+        'Reportes trimestrales',
+        'Modelo autosostenible',
+      ]}
+      variant="orange"
+    />
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+  name: string;
+  placeholder?: string;
+}
+const {
+  label,
+  name,
+  placeholder = '',
+} = Astro.props as Props;
+---
+<div class="flex flex-col">
+  <label for={name} class="font-medium mb-1 text-teal-800">{label}</label>
+  <textarea
+    id={name}
+    name={name}
+    placeholder={placeholder}
+    rows="4"
+    class="border border-gray-300 rounded-lg px-4 py-2
+           focus:outline-none focus:ring-2 focus:ring-teal-400
+           transition resize-none"
+  ></textarea>
+</div>

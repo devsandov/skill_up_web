@@ -1,0 +1,28 @@
+---
+import Heading    from '@atoms/Heading.astro';
+import Text       from '@atoms/Text.astro';
+import PillarCard from '@molecules/PillarCard.astro';
+---
+<section id="solucion" class="py-20 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <Heading level={2}>Nuestra solución en 3 pilares</Heading>
+    <Text>Un enfoque integral que combina tecnología, mentoría humana y aprendizaje colaborativo</Text>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <PillarCard
+      icon=""
+      title="Mentoría entre pares"
+      description="Estudiantes de alto desempeño guían a compañeros rezagados, creando apoyo mutuo y desarrollo de liderazgo."
+    />
+    <PillarCard
+      icon=""
+      title=""
+      description="Responde dudas, recomienda micro-módulos y envía recordatorios directamente al celular del estudiante."
+    />
+    <PillarCard
+      icon=""
+      title="Talleres grupales"
+      description="Refuerzan temas críticos antes de exámenes y fomentan habilidades blandas y liderazgo."
+    />
+  </div>
+</section>

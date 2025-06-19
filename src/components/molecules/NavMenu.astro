@@ -1,19 +1,28 @@
-
 ---
 import NavLink from '@atoms/NavLink.astro';
-const { items } = Astro.props; // [{ href, label }]
+interface NavItem { href: string; label: string; }
+const { items } = Astro.props as { items: NavItem[] };
 ---
-<nav>
-  <button id="btn" class="md:hidden p-2">☰</button>
-  <ul id="menu" class="hidden flex-col space-y-4 mt-4 md:flex md:flex-row md:space-x-6">
-    {items.map(i => <li><NavLink href={i.href}>{i.label}</NavLink></li>)}
+<nav class="px-4">
+  <button
+    id="btn"
+    class="md:hidden p-2 text-2xl"
+    aria-label="Abrir menú"
+  >
+    ☰
+  </button>
+  <ul
+    id="menu"
+    class="md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0"
+  >
+    {items.map(item => (
+      <li><NavLink href={item.href}>{item.label}</NavLink></li>
+    ))}
   </ul>
+
   <script>
     const btn = document.getElementById('btn');
     const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      console.log('Menu toggled');
-    });
+    btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
   </script>
 </nav>

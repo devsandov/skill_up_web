@@ -1,0 +1,39 @@
+---
+interface Props {
+  icon?: string;
+  title: string;
+  benefits: string[];
+  variant?: 'blue' | 'green' | 'purple' | 'orange';
+}
+const {
+  icon,
+  title,
+  benefits,
+  variant = 'blue',
+} = Astro.props as Props;
+
+const bgColors = {
+  blue:   'bg-blue-50 text-blue-800',
+  green:  'bg-green-50 text-green-800',
+  purple: 'bg-purple-50 text-purple-800',
+  orange: 'bg-orange-50 text-orange-800',
+};
+const iconColors = {
+  blue:   'text-blue-500',
+  green:  'text-green-500',
+  purple: 'text-purple-500',
+  orange: 'text-orange-500',
+};
+---
+<article
+  class={`rounded-lg p-6 transform transition duration-300 hover:scale-105 ${bgColors[variant]}`}
+>
+  <div class={`w-12 h-12 mb-4 flex items-center justify-center rounded-full
+                  bg-white ${iconColors[variant]}`}>
+    <img src={icon ?? ''} alt={`Ícono de ${title}`} class="w-6 h-6"/>
+  </div>
+  <h3 class="text-xl font-semibold mb-2">{title}</h3>
+  <ul class="list-disc list-inside space-y-1 text-gray-700">
+    {benefits.map(b => <li>{b}</li>)}
+  </ul>
+</article>

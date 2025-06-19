@@ -1,0 +1,65 @@
+---
+import FooterColumn from '@molecules/FooterColumn.astro';
+---
+<footer class="bg-teal-900 text-gray-300">
+  <div class="max-w-7xl mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    
+    <FooterColumn title="SkillUp Guatemala">
+      <p class="text-gray-400 mb-4">
+        Asociación sin fines de lucro registrada comprometida con transformar el potencial de la juventud guatemalteca en talento preparado para un futuro más justo e innovador.
+      </p>
+      <p class="text-gray-500 text-sm">NIT: En trámite</p>
+    </FooterColumn>
+
+    <FooterColumn title="Enlaces">
+      <ul class="space-y-2">
+        <li><a href="#mision" class="hover:text-white">Misión y Visión</a></li>
+        <li><a href="#programas" class="hover:text-white">Programas</a></li>
+        <li><a href="#transparencia" class="hover:text-white">Transparencia</a></li>
+        <li><a href="#reportes" class="hover:text-white">Reportes auditados</a></li>
+      </ul>
+    </FooterColumn>
+
+    <FooterColumn title="Contacto">
+      <ul class="space-y-2">
+        <li class="flex items-center">
+          <span class="mr-2">📧</span>
+          <a href="mailto:info@skillup.gt" class="hover:text-white">info@skillup.gt</a>
+        </li>
+        <li class="flex items-center">
+          <span class="mr-2">📞</span>
+          <a href="tel:+50212345678" class="hover:text-white">+502 XXX XXX XXX</a>
+        </li>
+        <li class="flex items-center">
+          <span class="mr-2">🌐</span>
+          <a href="https://www.skillup.gt" target="_blank" class="hover:text-white">www.skillup.gt</a>
+        </li>
+      </ul>
+    </FooterColumn>
+
+    <FooterColumn title="Síguenos">
+      <ul class="flex space-x-4 mb-4">
+        <li><a href="#" class="hover:text-white">Facebook</a></li>
+        <li><a href="#" class="hover:text-white">Instagram</a></li>
+        <li><a href="#" class="hover:text-white">YouTube</a></li>
+      </ul>
+      <div class="bg-teal-800 p-4 rounded">
+        <p class="text-white text-sm">
+          ¡Súmate al cambio! Cada contribución cuenta para transformar la educación en Guatemala.
+        </p>
+      </div>
+    </FooterColumn>
+  </div>
+
+  <div class="border-t border-teal-700 mt-6 pt-6 text-center text-gray-500 text-sm">
+    © 2024 SkillUp Guatemala. Organización sin fines de lucro registrada. Todos los derechos reservados.
+    <div class="mt-2 space-x-4">
+      <a href="#consejo" class="hover:text-white">Consejo directivo voluntario</a>•
+      <a href="#politicas" class="hover:text-white">Políticas de protección infantil y datos personales</a>
+    </div>
+  </div>
+
+  <script>
+    console.log('Footer component loaded');
+  </script>
+</footer>

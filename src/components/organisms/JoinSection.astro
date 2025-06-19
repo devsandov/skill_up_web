@@ -1,0 +1,106 @@
+---
+import Heading        from '@atoms/Heading.astro';
+import Text           from '@atoms/Text.astro';
+import InputField     from '@atoms/InputField.astro';
+import TextareaField  from '@atoms/TextareaField.astro';
+---
+<section id="unete" class="py-20 bg-gray-50">
+  <div class="max-w-3xl mx-auto text-center mb-12">
+    <Heading level={2}>Únete a SkillUp</Heading>
+    <Text>Transforma el futuro de la educación en Guatemala. Cada actor es clave para el éxito.</Text>
+  </div>
+
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 delay-200">
+    <div role="tablist" class="flex space-x-2 mb-6 border-b">
+      <button data-tab="docente"
+        class="px-4 py-2 rounded-t-lg font-medium bg-teal-500 text-white transition"
+      >
+        Docente/Escuela
+      </button>
+      <button data-tab="estudiante"
+        class="px-4 py-2 rounded-t-lg font-medium text-gray-700 hover:text-teal-500 transition"
+      >
+        Estudiante/Mentor
+      </button>
+      <button data-tab="inversionista"
+        class="px-4 py-2 rounded-t-lg font-medium text-gray-700 hover:text-teal-500 transition"
+      >
+        Inversionista Social
+      </button>
+    </div>
+
+    <form id="join-form" class="space-y-6">
+      <div data-panel="docente" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <InputField label="Nombre completo"   name="docente_name"    placeholder="Tu nombre"/>
+        <InputField label="Correo electrónico" name="docente_email"   type="email" placeholder="tu@email.com"/>
+        <InputField label="Teléfono/WhatsApp"  name="docente_phone"   placeholder="+502 1234 5678"/>
+        <InputField label="Institución educativa" name="docente_school" placeholder="Nombre de tu escuela"/>
+        <div class="sm:col-span-2">
+          <TextareaField
+            label="Mensaje"
+            name="docente_message"
+            placeholder="Cuéntanos sobre tu institución, número de estudiantes, y cómo te gustaría implementar SkillUp..."
+          />
+        </div>
+      </div>
+
+      <div data-panel="estudiante" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <InputField label="Nombre completo"   name="est_name"    placeholder="Tu nombre"/>
+        <InputField label="Correo electrónico" name="est_email"   type="email" placeholder="tu@email.com"/>
+        <InputField label="Teléfono/WhatsApp"  name="est_phone"   placeholder="+502 1234 5678"/>
+        <InputField label="Institución educativa" name="est_school" placeholder="Nombre de tu colegio"/>
+        <div class="sm:col-span-2">
+          <TextareaField
+            label="Mensaje"
+            name="est_message"
+            placeholder="Cuéntanos sobre ti, tu rol como mentor y la experiencia que aportas..."
+          />
+        </div>
+      </div>
+
+      <div data-panel="inversionista" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <InputField label="Nombre completo"   name="inv_name"    placeholder="Tu nombre"/>
+        <InputField label="Correo electrónico" name="inv_email"   type="email" placeholder="tu@email.com"/>
+        <InputField label="Teléfono/WhatsApp"  name="inv_phone"   placeholder="+502 1234 5678"/>
+        <InputField label="Organización"       name="inv_org"     placeholder="Nombre de tu fundación"/>
+        <div class="sm:col-span-2">
+          <TextareaField
+            label="Mensaje"
+            name="inv_message"
+            placeholder="Indica el tipo de apoyo que te interesa ofrecer y tu visión de alianza..."
+          />
+        </div>
+      </div>
+
+      <div class="sm:col-span-2">
+        <button
+          type="submit"
+          class="w-full bg-teal-500 text-white px-6 py-3 rounded-lg font-medium
+                 hover:bg-teal-600 transition transform hover:scale-105"
+        >
+          Solicitar piloto gratuito
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs   = document.querySelectorAll('[data-tab]');
+      const panels = document.querySelectorAll('[data-panel]');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-tab');
+          tabs.forEach(t => t.classList.remove('bg-teal-500','text-white'));
+          tabs.forEach(t => t.classList.add('text-gray-700'));
+          panels.forEach(p => p.classList.add('hidden'));
+          tab.classList.add('bg-teal-500','text-white');
+          tab.classList.remove('text-gray-700');
+          document.querySelector(`[data-panel="${target}"]`)?.classList.remove('hidden');
+          console.log(`Switched to tab: ${target}`);
+        });
+      });
+    });
+  </script>
+</section>

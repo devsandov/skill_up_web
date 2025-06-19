@@ -1,0 +1,31 @@
+---
+import Heading from '@atoms/Heading.astro';
+import Text    from '@atoms/Text.astro';
+import StatsCard from '@molecules/StatsCard.astro';
+---
+<section id="problema" class="py-20 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <Heading level={2}>El problema que enfrentamos</Heading>
+    <Text>La educación pública en Guatemala enfrenta desafíos críticos que limitan el potencial de nuestros jóvenes</Text>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <StatsCard
+      stat="10%"
+      title="Nivel mínimo en Matemática"
+      description="Solo 1 de cada 10 graduandos de escuelas públicas alcanza el nivel mínimo requerido"
+      variant="red"
+    />
+    <StatsCard
+      stat="1 : 35"
+      title="Relación docente-alumno"
+      description="Pocas oportunidades para tutorías personalizadas y atención individual"
+      variant="orange"
+    />
+    <StatsCard
+      stat="40%"
+      title="Evita preguntar por vergüenza"
+      description="Muchos estudiantes dependen solo de un celular con datos limitados"
+      variant="yellow"
+    />
+  </div>
+</section>

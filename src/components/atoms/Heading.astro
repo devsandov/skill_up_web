@@ -1,8 +1,15 @@
 ---
-const { level = 1, children } = Astro.props;
-const Tag = `h${level}`;
+interface Props { level?: 1 | 2 }
+const { level = 1 } = Astro.props as Props;
+const delay = level * 100;
+const size  = level === 1 ? 'text-4xl' : 'text-2xl';
 ---
-
-<@Tag class={`opacity-0 animate-fadeIn delay-${level * 100} text-${level === 1 ? '4xl' : '2xl'} font-bold`}>
-  {children}
-</@Tag>
+{level === 1 ? (
+  <h1 class={`delay-${delay} ${size} font-bold`}>
+    <slot/>
+  </h1>
+) : (
+  <h2 class={`delay-${delay} ${size} font-bold`}>
+    <slot/>
+  </h2>
+)}

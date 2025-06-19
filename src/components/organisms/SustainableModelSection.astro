@@ -1,0 +1,46 @@
+---
+import Heading   from '@atoms/Heading.astro';
+import Text      from '@atoms/Text.astro';
+import PlanCard  from '@molecules/PlanCard.astro';
+---
+<section id="modelo" class="py-20 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <Heading level={2}>Modelo sostenible y transparente</Heading>
+    <Text>100% sin fines de lucro, con transparencia total en el uso de recursos</Text>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <PlanCard
+      planName="Plan Social"
+      price="Gratuito"
+      subtitle="Para escuelas públicas"
+      priceColor="green"
+      benefits={[
+        'Financiado por donaciones',
+        'Patrocinios empresariales',
+        'Acceso completo a la plataforma',
+      ]}
+    />
+    <PlanCard
+      planName="Plan Solidario"
+      price="$1-2 USD/año"
+      subtitle="Por alumno en colegios privados"
+      priceColor="teal"
+      benefits={[
+        'Cubre servidores e incentivos',
+        'Subsidia escuelas públicas',
+        'Soporte técnico prioritario',
+      ]}
+    />
+    <PlanCard
+      planName="Transparencia"
+      price="100 %"
+      subtitle="Reinversión de ingresos"
+      priceColor="blue"
+      benefits={[
+        'Estados auditados públicos',
+        'Reportes trimestrales de KPIs',
+        'Consejo directivo voluntario',
+      ]}
+    />
+  </div>
+</section>

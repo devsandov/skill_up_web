@@ -1,0 +1,15 @@
+---
+import Heading  from '@atoms/Heading.astro';
+import StepCard from '@molecules/StepCard.astro';
+---
+<section id="como-funciona" class="py-20 bg-gray-50">
+  <div class="text-center mb-12">
+    <Heading level={2}>¿Cómo funciona?</Heading>
+  </div>
+  <div class="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <StepCard number={1} title="Diagnóstico inicial" description="Asigna módulo interactivo personalizado"/>
+    <StepCard number={2} title="Progreso del estudiante" description="Al completar 70% se habilita mentor"/>
+    <StepCard number={3} title="Mentoría activa" description="Sesiones 1:1 o grupales registradas"/>
+    <StepCard number={4} title="Soporte continuo" description="Chatbot y analítica para seguimiento"/>
+  </div>
+</section>
