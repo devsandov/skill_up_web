@@ -2,15 +2,17 @@
 import Logo from '@atoms/Logo.astro';
 import NavMenu from '@molecules/NavMenu.astro';
 ---
-<header class="fixed w-full bg-white shadow">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <Logo/>
-    <NavMenu items={[
-      { href: '#inicio',       label: 'Inicio' },
-      { href: '#problema',     label: 'El problema' },
-      { href: '#solucion',     label: 'Nuestra solución' },
-      { href: '#impacto',      label: 'Impacto' },
-      { href: '#unete',        label: 'Únete' },
-    ]}/>
+<header class="fixed w-full bg-white shadow-md z-30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <Logo />
+      <NavMenu items={[
+        { href: '#inicio',       label: 'Inicio' },
+        { href: '#problema',     label: 'El problema' },
+        { href: '#solucion',     label: 'Nuestra solución' },
+        { href: '#impacto',      label: 'Impacto' },
+        { href: '#unete',        label: 'Únete' },
+      ]} />
+    </div>
   </div>
 </header>

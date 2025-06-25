@@ -1,15 +1,87 @@
 ---
-import Heading  from '@atoms/Heading.astro';
+import Heading from '@atoms/Heading.astro';
 import StepCard from '@molecules/StepCard.astro';
+
+const steps = [
+  {
+    number: 1,
+    title: "Diagnóstico inicial",
+    description: "Asigna módulo interactivo personalizado basado en las necesidades específicas del estudiante"
+  },
+  {
+    number: 2,
+    title: "Progreso del estudiante",
+    description: "Al completar 70% del módulo se habilita el acceso a mentor especializado"
+  },
+  {
+    number: 3,
+    title: "Mentoría activa",
+    description: "Sesiones 1:1 o grupales registradas con seguimiento personalizado"
+  },
+  {
+    number: 4,
+    title: "Soporte continuo",
+    description: "Chatbot inteligente y analítica avanzada para seguimiento del progreso"
+  }
+];
 ---
-<section id="como-funciona" class="py-20 bg-gray-50">
-  <div class="text-center mb-12">
-    <Heading level={2}>¿Cómo funciona?</Heading>
+
+<section id="como-funciona" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-teal-400 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-teal-300 rounded-full blur-3xl"></div>
   </div>
-  <div class="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <StepCard number={1} title="Diagnóstico inicial" description="Asigna módulo interactivo personalizado"/>
-    <StepCard number={2} title="Progreso del estudiante" description="Al completar 70% se habilita mentor"/>
-    <StepCard number={3} title="Mentoría activa" description="Sesiones 1:1 o grupales registradas"/>
-    <StepCard number={4} title="Soporte continuo" description="Chatbot y analítica para seguimiento"/>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <Heading level={2} class="text-3xl lg:text-4xl mb-4">
+        ¿Cómo funciona?
+      </Heading>
+      <div class="w-24 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto rounded-full"></div>
+      <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+        Nuestro proceso está diseñado para maximizar el aprendizaje y el crecimiento personal de cada estudiante
+      </p>
+    </div>
+
+    <!-- Steps container -->
+    <div class="relative">
+      <!-- Desktop layout -->
+      <div class="hidden lg:grid lg:grid-cols-4 lg:gap-8 lg:items-center">
+        <div class="hidden lg:block absolute left-0 w-full h-0.5 bg-gradient-to-r from-teal-200 to-transparent transform translate-x-4 z-0"></div>
+
+        {steps.map((step, index) => (
+          <StepCard
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            isLast={index === steps.length - 1}
+          />
+        ))}
+      </div>
+
+      <!-- Mobile/Tablet layout -->
+      <div class="lg:hidden space-y-6">
+        {steps.map((step) => (
+          <StepCard
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            isLast={true}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center mt-16">
+      <div class="inline-flex items-center space-x-2 text-teal-700 bg-teal-50 px-6 py-3 rounded-full border border-teal-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        <span class="font-medium">Proceso optimizado para resultados efectivos</span>
+      </div>
+    </div>
   </div>
 </section>
