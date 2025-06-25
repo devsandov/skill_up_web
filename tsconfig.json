@@ -11,7 +11,8 @@
       "@organisms/*": ["src/components/organisms/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
-      "@assets/*": ["public/assets/*"]
+      "@assets/*": ["public/assets/*"],
+      "@lib/*": ["src/lib/*"]
     }
   },
   "include": [".astro/types.d.ts", "**/*"],
